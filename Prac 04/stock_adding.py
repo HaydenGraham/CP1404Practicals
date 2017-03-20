@@ -5,6 +5,7 @@ def main():
 
     for month in range(1, number_of_months_accounted + 1):
         income = float(input("Enter income for month " + str(month) + ": "))
+        str.format()
         incomes.append(income)
 
     print("\nIncome Report\n-------------")
