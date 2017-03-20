@@ -1,5 +1,0 @@
-source = open("numbers.txt", "r")
-num1 = int(source.readline())
-num2 = int(source.readline())
-print(num1 + num2)
-source.close()

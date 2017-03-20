@@ -1,7 +1,0 @@
-import random
-for i in range(1, 100):
-
-    print(random.randint(5, 20)) -------- line 1 Smallest number 5, largest number 20
-    print(random.randrange(3, 10, 2)) ---  line 2 Smallest number 3 largest number 9, Cannot print 4
-    print(random.uniform(2.5, 5.5)) ----- line 3 Smallest number 2.5 largest number 5.5
-    print()
