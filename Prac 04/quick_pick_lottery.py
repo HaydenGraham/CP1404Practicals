@@ -1,6 +1,6 @@
 import random
 rows = int(input("How many quick picks? "))
-
+# rows = 5
 for i in range(0,rows):
     row = [random.randint(1, 45)]
     while len(row) < 6:
