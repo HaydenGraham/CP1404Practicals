@@ -1,4 +1,3 @@
-
 def main():
     incomes = []
     number_of_months_accounted = int(input("How many number of months accounted? "))
@@ -8,6 +7,7 @@ def main():
         incomes.append(income)
 
     print_income_report(incomes, number_of_months_accounted)
+
 
 def print_income_report(incomes, number_of_months_accounted):
     print("\nIncome Report\n-------------")
@@ -19,4 +19,3 @@ def print_income_report(incomes, number_of_months_accounted):
 
 
 main()
-

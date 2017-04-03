@@ -1,4 +1,4 @@
-#Question 1: 3
+# Question 1: 3
 #         2: 2
 #         3: 1
 #         4: 3, 2
@@ -28,4 +28,3 @@ print("3" in numbers)
 print(numbers + [6, 5, 3])
 
 print("")
-
