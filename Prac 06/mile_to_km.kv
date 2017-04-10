@@ -1,0 +1,29 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_number
+            text: '7'
+            font_size: 48
+            multiline: False
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'up'
+                # the following line specifies the function in the app class to call when the button is pressed
+                on_press: app.addone(int(input_number.text))
+            Button:
+                text: 'down'
+                # the following line specifies the function in the app class to call when the button is pressed
+                on_press: app.takeone(int(input_number.text))
+    BoxLayout:
+        Button:
+            text: 'Covert m to km'
+            # the following line specifies the function in the app class to call when the button is pressed
+            on_press: app.handle_calculate(int(input_number.text))
+    BoxLayout:
+        Label:
+            id: output_label
+            font_size: 48
+            color: (1, 1, 0, 1)
