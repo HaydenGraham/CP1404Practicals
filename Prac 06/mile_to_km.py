@@ -3,33 +3,33 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 
+CONVERSION = 1.6
 
-class mile_to_km(App):
-    """ SquareNumberApp is a Kivy App for squaring a number """
+class MilesToKilometers(App):
     def build(self):
         """ build the Kivy app from the kv file """
-        Window.size = (300, 500)
-        self.title = "Square Number"
-        self.root = Builder.load_file('mile_to_km.kv')
+        self.title = "Convert Miles to Kilometres"
+        self.root = Builder.load_file('convert_m_km.kv')
         return self.root
-    def addone(self, value):
-        result = value + 1
-        self.root.ids.input_number.text = str(result)
-    def takeone(self, value):
+
+    def handle_calculate(self):
+        value = self.check_input()
+        result = value * CONVERSION
+        self.root.ids.output_label.text = str(result)
+
+    def handle_increment(self, change):
+        value = self.check_input() + change
+        self.root.ids.input_miles.text = str(value)
+        self.handle_calculate()
+
+    def check_input(self):
         try:
-            result = value - 1
-
+            value = float(self.root.ids.input_miles.text)
+            return value
         except ValueError:
-            print("thisran")
-            self.root.ids.input_number.text = 0
+            return 0
 
-        self.root.ids.input_number.text = str(result)
-    def handle_calculate(self, value):
-        try:
-            print(value/1.6)
-            result = value/1.6
-            self.root.ids.output_label.text = str(result)
-        except ValueError:
-            self.root.ids.output_label.text = 0.0
+    def changeTheme(self):
+        self._digits_toggled = not self._digits_toggled
 
-mile_to_km().run()
+MilesToKilometers().run()
