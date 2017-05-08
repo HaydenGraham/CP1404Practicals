@@ -1,4 +1,5 @@
 from random import randint
+
 """
 CP1404/CP5632 Practical
 Car class
@@ -64,19 +65,19 @@ class Taxi(Car):
 
 
 class UnreliableCar(Car):
-
     def __init__(self, name, fuel, reliability):
         super().__init__(name, fuel)
         self.reliability = reliability
 
     def drive(self, distance):
-        startingChance = randint(0,100)
+        startingChance = randint(0, 100)
         if startingChance < self.reliability:
             distance_driven = super().drive(distance)
         else:
             distance_driven = 0
             print("Did not start")
         return distance_driven
+
 
 class SilverStarTaxi(Taxi):
     flagfall = 4.5
@@ -91,9 +92,10 @@ class SilverStarTaxi(Taxi):
         total_fare = base_fare * self.fanciness + SilverStarTaxi.flagfall
         return total_fare
 
+
 class Limo(Taxi):
     flagfall = 4.5
-
+    price_per_km = 2.40
     def __init__(self, name, fuel, fanciness):
         super().__init__(name, fuel)
         self.fanciness = fanciness
